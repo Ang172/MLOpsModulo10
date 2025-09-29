@@ -14,4 +14,4 @@ jobs:
         python-version: '3.10'
     - run: pip install -r requirements.txt
     - run: python train_model.py
-    - run: python -c "from app import app; print('✅ Todo funciona!')"
+    - run: python -c "from app import app; print('Todo funciona!')"
