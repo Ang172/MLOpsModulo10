@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 name: CI/CD ML Pipeline
+=======
+name: CI/CD Simple
+>>>>>>> 569c8c77c64b64a7ad96673dfd85f1540138dbf6
 
 on:
   push:
@@ -8,8 +12,8 @@ jobs:
   # Job 1: Build y tests
   build-and-test:
     runs-on: ubuntu-latest
-    
     steps:
+<<<<<<< HEAD
     - name:  Checkout código
       uses: actions/checkout@v4
 
@@ -138,3 +142,12 @@ jobs:
         
         echo " Imagen pushada: $IMAGE_NAME:latest"
         echo " Imagen pushada: $IMAGE_NAME:${{ github.sha }}"
+=======
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    - run: pip install -r requirements.txt
+    - run: python train_model.py
+    - run: python -c "from app import app; print('Todo funciona!')"
+>>>>>>> 569c8c77c64b64a7ad96673dfd85f1540138dbf6
